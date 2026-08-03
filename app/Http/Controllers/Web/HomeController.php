@@ -347,7 +347,7 @@ class HomeController extends Controller
             'country'      => $request->country ?? '',
             'contact'      => $contact_number_withcode ?? '',
             'email'        => $request->email ?? '',
-            'service_name' => $request->input('service') ?? '',
+            'service_name' => $request->input('services') ?? '',
             'message'      => $request->message ?? '',
             'date'         => now()->format('Y-m-d H:i:s'),
         ];
@@ -803,16 +803,42 @@ class HomeController extends Controller
             'date'      => $timestamp,
         ];
 
+        // try {
+        //     Http::withHeaders(['Content-Type' => 'application/json'])
+        //         ->post('https://script.google.com/macros/s/AKfycbztAqlbzzo4_VTupFcT6udaQtinGuXjwL1zNm018BvHnkzEfLDF7JEa5DDjB2qKvWM-/exec', $sheetsData);
+        // } catch (\Exception $e) {
+        //     \Log::error('Google Sheets Exception (WhatsApp Inquiry):', [
+        //         'message'   => $e->getMessage(),
+        //         'trace'     => $e->getTraceAsString(),
+        //         'data_sent' => $sheetsData,
+        //     ]);
+        // }
+
+
+
         try {
-            Http::withHeaders(['Content-Type' => 'application/json'])
-                ->post('https://script.google.com/macros/s/AKfycbztAqlbzzo4_VTupFcT6udaQtinGuXjwL1zNm018BvHnkzEfLDF7JEa5DDjB2qKvWM-/exec', $sheetsData);
-        } catch (\Exception $e) {
-            \Log::error('Google Sheets Exception (WhatsApp Inquiry):', [
-                'message'   => $e->getMessage(),
-                'trace'     => $e->getTraceAsString(),
-                'data_sent' => $sheetsData,
-            ]);
-        }
+    $response = Http::withHeaders(['Content-Type' => 'application/json'])
+        ->timeout(30)
+        ->retry(3, 1000) // 3 attempts, 1 second gap
+        ->post('https://script.google.com/macros/s/AKfycbztAqlbzzo4_VTupFcT6udaQtinGuXjwL1zNm018BvHnkzEfLDF7JEa5DDjB2qKvWM-/exec', $sheetsData);
+
+    if ($response->successful()) {
+        Log::info('WhatsApp inquiry sent to sheet', [
+            'body' => $response->body(),
+            'status' => $response->status(),
+        ]);
+    } else {
+        Log::error('WhatsApp inquiry sheet failed', [
+            'status' => $response->status(),
+            'body' => $response->body(),
+        ]);
+    }
+} catch (\Exception $e) {
+    \Log::error('Google Sheets Exception (WhatsApp Inquiry):', [
+        'message' => $e->getMessage(),
+        'data_sent' => $sheetsData,
+    ]);
+}
 
         return response()->json(['success' => true]);
     }
