@@ -1,0 +1,13 @@
+User-Agent: *
+Disallow: /?pid
+Disallow: /?fp
+Disallow: /login
+Disallow: /thank-you
+Disallow: /landing 
+Disallow: /admin/
+Disallow: /login/
+Disallow: /*?*
+Disallow: /*&*
+Allow: /
+
+Sitemap: https://arc3d.ae/sitemap.xml

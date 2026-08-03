@@ -1,0 +1,36 @@
+<svg width="231" height="115" viewBox="0 0 231 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+<foreignObject x="-4" y="-4" width="239" height="123"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(#bgblur_0_1_2480_clip_path);height:100%;width:100%"></div></foreignObject><g filter="url(#filter0_n_1_2480)" data-figma-bg-blur-radius="4">
+<path d="M223.759 115C227.883 115 231.251 111.673 230.985 107.584C229.179 79.7913 217.268 53.4947 197.331 33.6827C175.628 12.1161 146.192 2.78638e-05 115.5 2.01947e-05C84.8076 1.25256e-05 55.3722 12.116 33.6694 33.6827C13.7323 53.4947 1.82097 79.7912 0.0147047 107.584C-0.251088 111.673 3.11725 115 7.24132 115C11.3654 115 14.6798 111.673 14.9849 107.586C16.7656 83.7333 27.094 61.205 44.2298 44.1768C63.1318 25.3934 88.7685 14.8409 115.5 14.8409C142.232 14.8409 167.868 25.3934 186.77 44.1769C203.906 61.2051 214.234 83.7333 216.015 107.586C216.32 111.673 219.635 115 223.759 115Z" fill="url(#paint0_linear_1_2480)" fill-opacity="0.5"/>
+<path d="M115.5 0.50002C146.061 0.500028 175.37 12.5639 196.979 34.0371C216.829 53.7632 228.688 79.9455 230.486 107.616C230.732 111.393 227.619 114.5 223.759 114.5C219.917 114.5 216.801 111.396 216.514 107.549C214.724 83.5762 204.344 60.9352 187.123 43.8223C168.127 24.9454 142.363 14.3408 115.5 14.3408C88.6369 14.3408 62.873 24.9454 43.8769 43.8223C26.6561 60.9352 16.276 83.5762 14.4863 107.549C14.1991 111.396 11.0832 114.5 7.24119 114.5C3.38091 114.5 0.268216 111.393 0.513653 107.616C2.312 79.9454 14.1709 53.7632 34.0215 34.0371C55.6303 12.5639 84.9392 0.500017 115.5 0.50002Z" stroke="url(#paint1_linear_1_2480)"/>
+</g>
+<defs>
+<filter id="filter0_n_1_2480" x="-4" y="-4" width="239" height="123" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="3.3333332538604736 3.3333332538604736" stitchTiles="stitch" numOctaves="3" result="noise" seed="5153" />
+<feComponentTransfer in="noise" result="coloredNoise1">
+<feFuncR type="linear" slope="2" intercept="-0.5" />
+<feFuncG type="linear" slope="2" intercept="-0.5" />
+<feFuncB type="linear" slope="2" intercept="-0.5" />
+<feFuncA type="discrete" tableValues="0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feComponentTransfer in="noise1Clipped" result="color1">
+<feFuncA type="table" tableValues="0 0.15" />
+</feComponentTransfer>
+<feMerge result="effect1_noise_1_2480">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<clipPath id="bgblur_0_1_2480_clip_path" transform="translate(4 4)"><path d="M223.759 115C227.883 115 231.251 111.673 230.985 107.584C229.179 79.7913 217.268 53.4947 197.331 33.6827C175.628 12.1161 146.192 2.78638e-05 115.5 2.01947e-05C84.8076 1.25256e-05 55.3722 12.116 33.6694 33.6827C13.7323 53.4947 1.82097 79.7912 0.0147047 107.584C-0.251088 111.673 3.11725 115 7.24132 115C11.3654 115 14.6798 111.673 14.9849 107.586C16.7656 83.7333 27.094 61.205 44.2298 44.1768C63.1318 25.3934 88.7685 14.8409 115.5 14.8409C142.232 14.8409 167.868 25.3934 186.77 44.1769C203.906 61.2051 214.234 83.7333 216.015 107.586C216.32 111.673 219.635 115 223.759 115Z"/>
+</clipPath><linearGradient id="paint0_linear_1_2480" x1="115.5" y1="2.01947e-05" x2="115.5" y2="83.6881" gradientUnits="userSpaceOnUse">
+<stop stop-color="#DDDDDD"/>
+<stop offset="1" stop-color="#DDDDDD" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1_2480" x1="115.5" y1="2.01947e-05" x2="115.5" y2="115" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CCCCCC"/>
+<stop offset="1" stop-color="#DDDDDD" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>
