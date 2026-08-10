@@ -20,6 +20,7 @@ use App\Http\Controllers\Admin\TrustedPartnerController;
 use App\Http\Controllers\Web\AboutController;
 
 //=================WEB=================
+use App\Http\Controllers\SitemapController;
 use App\Http\Controllers\Web\HomeController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,22 @@ Route::get('clear', function () {
 
     return 'Optimization cache cleared!';
 });
+
+//========================Start Sitemap Routes========================
+
+Route::get('/sitemap-index.xml', [SitemapController::class, 'index'])
+    ->name('sitemap.index');
+
+Route::get('/post-sitemap.xml', [SitemapController::class, 'posts'])
+    ->name('sitemap.posts');
+
+Route::get('/page-sitemap.xml', [SitemapController::class, 'pages'])
+    ->name('sitemap.pages');
+
+Route::get('/service-sitemap.xml', [SitemapController::class, 'services'])
+    ->name('sitemap.services');
+
+//========================End Sitemap Routes========================
 
 route::get('/', [HomeController::class, 'index'])->name('front.home');
 route::get('/story', [HomeController::class, 'story'])->name('front.story');
@@ -59,7 +76,7 @@ route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('fro
 route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('front.privacy');
 route::get('/blogs', [HomeController::class, 'blog_listing'])->name('front.blog_listing');
 route::get('/blog-detail/{url}', [HomeController::class, 'blog_detail'])->name('front.blog_detail');
-Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('front.sitemap');
+// Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('front.sitemap');
 
 //=============================Admin Route Starts Here========================
 route::middleware('guest')->group(function () {
