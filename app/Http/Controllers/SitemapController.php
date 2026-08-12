@@ -52,6 +52,7 @@ class SitemapController extends Controller
         $services = Services::where('status', 'Active')
             ->whereNull('deleted_at')
             ->whereNotIn('url', $excludeSlugs)
+            ->orderBy('id', 'desc')
             ->get();
 
         foreach ($services as $service)
