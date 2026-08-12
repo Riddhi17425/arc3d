@@ -293,45 +293,19 @@
                     <div>
 
                          @php
+                            use App\Models\Services;
 
-                                use App\Models\Services;
+                            $exclude_slugs = config('global_values.exclude_service_slugs', []);
 
-
-
-                                $exclude_slugs = [
-
-                                    'scale-models',
-
-                                    'architectural-scale-models',
-
-                                    'trophies-and-giveaways',
-
-                                    'props-and-sculptures',
-
-                                    'prototype-and-low-volume-parts',
-
-                                    'automotive-scale-models',
-
-                                    'engineering-and-industrial-models'
-
-
-
-
-
-                                ];
-
-                                $services = Services::where('status', 'Active')->whereNotIn('url', $exclude_slugs)->orderBy('id' , 'Desc')->get();
-
-
-
-                            @endphp
+                            $services = Services::where('status', 'Active')
+                                ->whereNotIn('url', $exclude_slugs)
+                                ->orderBy('id' , 'Desc')
+                                ->get();
+                        @endphp
 
                         <p class="ft_head">Services</p>
 
                         <ul class="ft_list">
-
-
-
                             @foreach ($services as $service)
 
                                 <li><a href="{{ route('front.services' , ['url' =>$service->url] ) }}">{{ $service->title }}</a></li>

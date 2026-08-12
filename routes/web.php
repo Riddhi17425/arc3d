@@ -34,17 +34,7 @@ Route::get('clear', function () {
 
 //========================Start Sitemap Routes========================
 
-Route::get('/sitemap-index.xml', [SitemapController::class, 'index'])
-    ->name('sitemap.index');
-
-Route::get('/post-sitemap.xml', [SitemapController::class, 'posts'])
-    ->name('sitemap.posts');
-
-Route::get('/page-sitemap.xml', [SitemapController::class, 'pages'])
-    ->name('sitemap.pages');
-
-Route::get('/service-sitemap.xml', [SitemapController::class, 'services'])
-    ->name('sitemap.services');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
 
 //========================End Sitemap Routes========================
 

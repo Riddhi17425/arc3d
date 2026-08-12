@@ -7,135 +7,57 @@ use App\Models\Services;
 
 class SitemapController extends Controller
 {
-    /**
-     * Return XML response
-     */
+    // RETURN XML RESPONSE
     protected function xmlResponse(string $xml)
     {
         return response($xml, 200)
             ->header('Content-Type', 'application/xml');
     }
 
-    /**
-     * Sitemap Index
-     */
+    // COMPLETE SITEMAP - CONTAINS: HOMEPAGE, STATIC PAGES, BLOG POSTS AND SERVICES
     public function index()
     {
-        $sitemaps = [
-            route('sitemap.pages'),
-            route('sitemap.posts'),
-            route('sitemap.services'),
-        ];
-
+        $todayTime = "2026-08-12T15:30:00+05:30";
+    
         $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-        $xml .= '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
-        foreach ($sitemaps as $loc) {
-            $xml .= '<sitemap>';
-            $xml .= '<loc>' . htmlspecialchars($loc, ENT_XML1, 'UTF-8') . '</loc>';
-            $xml .= '<lastmod>' . now()->toAtomString() . '</lastmod>';
-            $xml .= '</sitemap>' . "\n";
-        }
-
-        $xml .= '</sitemapindex>';
-
-        return $this->xmlResponse($xml);
-    }
-
-    /**
-     * Static Pages Sitemap
-     */
-    public function pages()
-    {
-        $staticRoutes = [
-            'front.home',
-            'front.story',
-            'front.our_process',
-            'front.our_team',
-            'front.architectural.model.making',
-            'front.printing',
-            'front.career',
-            'front.contact',
-            'front.projects',
-            'front.architecture',
-            'front.prototyping',
-            'front.large_scale',
-            'front.terms',
-            'front.privacy',
-            'front.blog_listing',
-        ];
-
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
 
-        foreach ($staticRoutes as $name) {
+        // START - HOMEPAGE 
 
-            $loc = route($name);
+        $xml .= '<url>';
 
-            $xml .= '<url>';
-            $xml .= '<loc>' . htmlspecialchars($loc, ENT_XML1, 'UTF-8') . '</loc>';
-            $xml .= '</url>' . "\n";
-        }
+        $xml .= '<loc>'
+            . htmlspecialchars(
+                route('front.home'),
+                ENT_XML1,
+                'UTF-8'
+            )
+            . '</loc>';
 
-        $xml .= '</urlset>';
+        $xml .= '<lastmod>'
+                . htmlspecialchars($todayTime, ENT_XML1, 'UTF-8')
+                . '</lastmod>';
 
-        return $this->xmlResponse($xml);
-    }
+        $xml .= '<priority>1.00</priority>';
 
-    /**
-     * Dynamic Blog Sitemap
-     */
-    public function posts()
-    {
-        $blogs = Blogs::where('status', 'Active')
-            ->whereNull('deleted_at')
-            ->get();
+        $xml .= '</url>' . "\n";
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        // END - HOMEPAGE
 
-        foreach ($blogs as $blog) {
+        // START - DYNAMIC SERVICES
+        
+        $excludeSlugs = config('global_values.exclude_service_slugs', []);
 
-            if (empty($blog->url)) {
-                continue;
-            }
-
-            $loc = route('front.blog_detail', [
-                'url' => $blog->url
-            ]);
-
-            $lastmod = optional($blog->updated_at)->toAtomString();
-
-            $xml .= '<url>';
-            $xml .= '<loc>' . htmlspecialchars($loc, ENT_XML1, 'UTF-8') . '</loc>';
-
-            if ($lastmod) {
-                $xml .= '<lastmod>' . $lastmod . '</lastmod>';
-            }
-
-            $xml .= '</url>' . "\n";
-        }
-
-        $xml .= '</urlset>';
-
-        return $this->xmlResponse($xml);
-    }
-
-    /**
-     * Dynamic Service Sitemap
-     */
-    public function services()
-    {
         $services = Services::where('status', 'Active')
             ->whereNull('deleted_at')
+            ->whereNotIn('url', $excludeSlugs)
             ->get();
 
-        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
-        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
-
-        foreach ($services as $service) {
-
-            if (empty($service->url)) {
+        foreach ($services as $service)
+        {
+            if (empty($service->url)) 
+            {
                 continue;
             }
 
@@ -146,14 +68,96 @@ class SitemapController extends Controller
             $lastmod = optional($service->updated_at)->toAtomString();
 
             $xml .= '<url>';
-            $xml .= '<loc>' . htmlspecialchars($loc, ENT_XML1, 'UTF-8') . '</loc>';
 
-            if ($lastmod) {
-                $xml .= '<lastmod>' . $lastmod . '</lastmod>';
+            $xml .= '<loc>'
+                . htmlspecialchars($loc, ENT_XML1, 'UTF-8')
+                . '</loc>';
+
+            if ($lastmod)
+            {
+                $xml .= '<lastmod>'
+                    . htmlspecialchars($lastmod, ENT_XML1, 'UTF-8')
+                    . '</lastmod>';
             }
+
+            $xml .= '<priority>0.80</priority>';
 
             $xml .= '</url>' . "\n";
         }
+
+        // END - DYNAMIC SERVICES
+
+        // START - STATIC PAGES
+
+        $staticRoutes = [
+            'front.story',
+            'front.our_process',
+            'front.our_team',
+            'front.career',
+            'front.contact',
+            'front.projects',
+            'front.blog_listing',
+        ];
+
+        foreach ($staticRoutes as $name)
+        {
+            $loc = route($name);
+
+            $xml .= '<url>';
+
+            $xml .= '<loc>'
+                . htmlspecialchars($loc, ENT_XML1, 'UTF-8')
+                . '</loc>';
+
+            $xml .= '<lastmod>'
+                . htmlspecialchars($todayTime, ENT_XML1, 'UTF-8')
+                . '</lastmod>';
+
+            $xml .= '<priority>0.60</priority>';
+
+            $xml .= '</url>' . "\n";
+        }
+
+        // END - STATIC PAGES
+
+        //  START - DYNAMIC BLOG POSTS
+
+        $blogs = Blogs::where('status', 'Active')
+            ->whereNull('deleted_at')
+            ->get();
+
+        foreach ($blogs as $blog)
+        {
+            if (empty($blog->url))
+            {
+                continue;
+            }
+
+            $loc = route('front.blog_detail', [
+                'url' => $blog->url
+            ]);
+
+            $lastmod = optional($blog->updated_at)->toAtomString();
+
+            $xml .= '<url>';
+
+            $xml .= '<loc>'
+                . htmlspecialchars($loc, ENT_XML1, 'UTF-8')
+                . '</loc>';
+
+            if ($lastmod)
+            {
+                $xml .= '<lastmod>'
+                    . htmlspecialchars($lastmod, ENT_XML1, 'UTF-8')
+                    . '</lastmod>';
+            }
+
+            $xml .= '<priority>0.60</priority>';
+
+            $xml .= '</url>' . "\n";
+        }
+
+        //  END - DYNAMIC BLOG POSTS
 
         $xml .= '</urlset>';
 

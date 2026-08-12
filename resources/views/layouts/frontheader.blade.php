@@ -640,68 +640,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                                 </ul>
 
-
-
                                 @php
 
-                                    $exclude_slugs = [
-
-                                        'scale-models',
-
-                                        'architectural-scale-models',
-
-                                        'trophies-and-giveaways',
-
-                                        'props-and-sculptures',
-
-                                        'prototype-and-low-volume-parts',
-
-                                        'engineering-and-industrial-models',
-
-                                        'automotive-scale-models',
-
-                                        'architectural-model-making',
-
-                                    ];
+                                    $exclude_slugs = config('global_values.exclude_service_slugs', []);
 
                                     $services = Services::where('status', 'Active')
-
                                                 ->whereNotIn('url', $exclude_slugs)
-
                                                 ->orderBy('id', 'Desc')
-
                                                 ->get();
-
                                 @endphp
 
                                 <div class="sub_menu_wrapper">
-
                                     <span class="back-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-
                                             xmlns="http://www.w3.org/2000/svg">
-
                                             <path d="M19 12H5M5 12L11 18M5 12L11 6" stroke="#333333" stroke-width="2"
-
                                                 stroke-linecap="round" stroke-linejoin="round" />
-
-                                        </svg>
-
-                                        Back</span>
-
-
+                                        </svg>Back
+                                    </span>
 
                                     <ul class="sub-menu-items">
-
-
-
                                         @foreach ($services as $service)
 
                                             <li><a href="{{ route('front.services' , ['url' =>$service->url] ) }}">{{ $service->title }}</a></li>
 
                                         @endforeach
-
-
-
                                     </ul>
 
                                 </div>
