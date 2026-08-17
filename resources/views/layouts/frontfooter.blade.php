@@ -538,6 +538,25 @@
 
     }
 
+    .popup-btn .btn-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: btnSpin 0.7s linear infinite;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+@keyframes btnSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
     .Whats_mpp_modal .popup-btn:hover {
 
         background: #005762;
@@ -1232,7 +1251,7 @@ $("#whatsappForm").validate({
 
     submitHandler: function(form) {
 
-
+    
 
         // Clear old errors
 
@@ -1256,10 +1275,9 @@ $("#whatsappForm").validate({
 
 
 
-        $("#submitbtn").prop("disabled", true).text("Submitting...");
+        // $("#submitbtn").prop("disabled", true).text("Submitting...");
 
-
-
+$("#submitbtn").prop("disabled", true).html('<span class="btn-spinner"></span>Connecting to WhatsApp...');
         // Open blank tab NOW (synchronous = bypasses popup blocker)
 
         // Show loading in the new tab instead of about:blank
