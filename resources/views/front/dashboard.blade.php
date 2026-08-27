@@ -376,7 +376,8 @@
         'Props and Sculptures',
         'Prototype and Low-Volume Parts',
         'Automotive scale models',
-        'Engineering and industrial models'
+        'Engineering and industrial models',
+        'Architectural & Masterplan Scale Model'
     ];
 @endphp
 
