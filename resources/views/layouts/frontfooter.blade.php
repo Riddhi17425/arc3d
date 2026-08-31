@@ -84,6 +84,42 @@
     }
 </Style>
 
+<style>
+    .footer-trust-badges {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        margin: 26px auto 10px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .footer-trust-badges .footer-trust-line {
+        flex: 1;
+        min-width: 100%;
+        height: 2px;
+        background: #DDD;
+        opacity: 0.8;
+        display: block;
+        border: 0;
+    }
+
+    .footer-trust-badges img {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    @media only screen and (max-width: 769px) {
+
+        .footer-trust-badges .footer-trust-line {
+           display:none;
+        }
+}
+
+</style>
+
 <footer class="mt-100">
 
     <div class="container">
@@ -416,6 +452,13 @@
             <img src="{{ asset('public/front/images/ft_bottom.svg') }}" alt="Footer design graphic"
                 class="img-fluid">
 
+        </div>
+
+        <div class="footer-trust-badges">
+            <span class="footer-trust-line"></span>
+            <img src="{{ asset('public/front/images/footer-trust-badges.svg') }}"
+                alt="Trusted partners and certifications">
+            <span class="footer-trust-line"></span>
         </div>
 
         <div class="ft_bottom d-mb-none">
