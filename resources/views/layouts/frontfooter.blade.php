@@ -766,7 +766,7 @@
 
             <div class="modal-header popup-header">
 
-                <h5>Chat with us on WhatsApp</h5>
+                <p>Chat with us on WhatsApp</p>
 
                 <button type="button" class="btn-close white-close" data-bs-dismiss="modal"></button>
 

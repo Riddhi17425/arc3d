@@ -71,7 +71,7 @@
                     <div class="comp_bus_back">
                         <span><img class="img-fluid" src="{{ asset('public/front/images/Architectural-Scale-Models.png')}}" alt="Architectural Scale Model" loading="lazy"></span>
                         <div class="comp_bus_back_bt">
-                            <h3 class="comp_bus_num">Architectural Scale Models</h3>
+                            <p class="comp_bus_num">Architectural Scale Models</p>
                            <p class="comp_bus_ext">High-accuracy scale models intended for use in real estate sales, approvals, or investor meetings. These models illustrate the form of the buildings and the context.</p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                     <div class="comp_bus_back">
                         <span><img class="img-fluid" src="{{ asset('public/front/images/3D-Scale-Models.png')}}" alt="3D Scale Models" loading="lazy"></span>
                         <div class="comp_bus_back_bt">
-                            <h3 class="comp_bus_num">3D Scale Models</h3>
+                            <p class="comp_bus_num">3D Scale Models</p>
                             <p class="comp_bus_ext">Realistic 3D architectural models created through current advances in 3D printing and technology for effective graphical representation during exhibitions, marketing, and reviews.</p>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                     <div class="comp_bus_back">
                         <span><img class="img-fluid" src="{{ asset('public/front/images/Masterplan-Models.png')}}" alt="Masterplan Models" loading="lazy"></span>
                         <div class="comp_bus_back_bt">
-                            <h3 class="comp_bus_num">Masterplan Models</h3>
+                            <p class="comp_bus_num">Masterplan Models</p>
                             <p class="comp_bus_ext">Detailed scale models that depict zoning, roads, landscaping, and infrastructure. Large-format scale models are suitable for urban planners, governments, or real estate developers. </p>
                         </div>
                     </div>
@@ -122,7 +122,7 @@
                     <div class="comp_bus_back">
                         <span><img class="img-fluid" src="{{ asset('public/front/images/Detailed-Interior-Models.png')}}" alt="Detailed Interior Models" loading="lazy"></span>
                         <div class="comp_bus_back_bt">
-                            <h3 class="comp_bus_num">Detailed Interior Models</h3>
+                            <p class="comp_bus_num">Detailed Interior Models</p>
                             <p class="comp_bus_ext">High detail interior three-dimensional models showing room layouts, finishes, lighting, and furniture arrangements for the hospitality industry, retail, and residential markets.</p>
                         </div>
                     </div>
@@ -139,7 +139,7 @@
                     <div class="comp_bus_back">
                         <span><img class="img-fluid" src="{{ asset('public/front/images/Industrial-Technical-Models.png')}}" alt="Industrial Technical Models" loading="lazy"></span>
                         <div class="comp_bus_back_bt">
-                            <h3 class="comp_bus_num">Industrial & Technical Models</h3>
+                            <p class="comp_bus_num">Industrial & Technical Models</p>
                             <p class="comp_bus_ext">Precisely built models for factory layouts, machine layouts, Oil & Gas plants, and other engineering projects aimed at presentations, training, and approval.</p>
                         </div>
                     </div>
@@ -153,7 +153,7 @@
                             <div class="comp_bus_back">
                                 <span><img class="img-fluid" src="{{ asset('public/front/images/Architectural-Scale-Models.png')}}" alt="Architectural Scale Models" loading="lazy"></span>
                                 <div class="comp_bus_back_bt">
-                                    <h4 class="comp_bus_num">Architectural Scale Models</h4>
+                                    <p class="comp_bus_num">Architectural Scale Models</p>
                                     <p class="comp_bus_ext">High-accuracy scale models intended for use in real estate sales, approvals, or investor meetings. These models illustrate the form of the buildings and the context.</p>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                             <div class="comp_bus_back">
                                 <span><img class="img-fluid" src="{{ asset('public/front/images/3D-Scale-Models.png')}}" alt="3D-Scale Models" loading="lazy"></span>
                                 <div class="comp_bus_back_bt">
-                                    <h4 class="comp_bus_num">3D Scale Models</h4>
+                                    <p class="comp_bus_num">3D Scale Models</p>
                                     <p class="comp_bus_ext">Realistic 3D architectural models created through current advances in 3D printing and technology for effective graphical representation during exhibitions, marketing, and reviews.</p>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@
                             <div class="comp_bus_back">
                                 <span><img class="img-fluid" src="{{ asset('public/front/images/Masterplan-Models.png')}}" alt="Masterplan Models" loading="lazy"></span>
                                 <div class="comp_bus_back_bt">
-                                    <h4 class="comp_bus_num">Masterplan Models</h4>
+                                    <p class="comp_bus_num">Masterplan Models</p>
                                     <p class="comp_bus_ext">Detailed scale models that depict zoning, roads, landscaping, and infrastructure. Large-format scale models are suitable for urban planners, governments, or real estate developers. </p>
                                 </div>
                             </div>
@@ -189,7 +189,7 @@
                             <div class="comp_bus_back">
                                 <span><img class="img-fluid" src="{{ asset('public/front/images/Detailed-Interior-Models.png')}}" alt="Detailed Interior Models" loading="lazy"></span>
                                 <div class="comp_bus_back_bt">
-                                    <h4 class="comp_bus_num">Detailed Interior Models</h4>
+                                    <p class="comp_bus_num">Detailed Interior Models</p>
                                     <p class="comp_bus_ext">High detail interior three-dimensional models showing room layouts, finishes, lighting, and furniture arrangements for the hospitality industry, retail, and residential markets.</p>
                                 </div>
                             </div>
@@ -201,7 +201,7 @@
                             <div class="comp_bus_back">
                                 <span><img class="img-fluid" src="{{ asset('public/front/images/Industrial-Technical-Models.png')}}" alt="Industrial Technical Models" loading="lazy"></span>
                                 <div class="comp_bus_back_bt">
-                                    <h4 class="comp_bus_num">Industrial & Technical Models</h4>
+                                    <p class="comp_bus_num">Industrial & Technical Models</p>
                                     <p class="comp_bus_ext">Precisely built models for factory layouts, machine layouts, Oil & Gas plants, and other engineering projects aimed at presentations, training, and approval.</p>
                                 </div>
                             </div>
@@ -298,7 +298,7 @@
                                 </div>
                                 <img src="{{ asset('public/admin/industries_image/Architecture.svg')}}" alt="" class="img-fluid" loading="lazy">
                             </div>
-                            <h3 class="slide_title">Real Estate & Property Sales</h3>
+                            <p class="slide_title">Real Estate & Property Sales</p>
 
                             <div class="inds_backslide">
                                 <div class="inds_top">
@@ -332,7 +332,7 @@
                                 </div>
                                 <img src="{{ asset('public/admin/industries_image/Defense.svg')}}" alt="Defense" class="img-fluid" loading="lazy">
                             </div>
-                            <h3 class="slide_title">Urban Planning & Government Projects</h3>
+                            <p class="slide_title">Urban Planning & Government Projects</p>
 
                             <div class="inds_backslide">
                                 <div class="inds_top">
@@ -366,7 +366,7 @@
                                 </div>
                                 <img src="{{ asset('public/admin/industries_image/Healthcare.svg')}}" alt="Healthcare" class="img-fluid" loading="lazy">
                             </div>
-                            <h3 class="slide_title">Hospitality, Leisure & Tourism</h3>
+                            <p class="slide_title">Hospitality, Leisure & Tourism</p>
 
                             <div class="inds_backslide">
                                 <div class="inds_top">
@@ -400,7 +400,7 @@
                                 </div>
                                 <img src="{{ asset('public/admin/industries_image/Industrial-Equipment-Manufacturing.svg')}}" alt="Industrial-Equipment-Manufacturing" class="img-fluid" loading="lazy">
                             </div>
-                            <h3 class="slide_title">Engineering & Industrial Projects</h3>
+                            <p class="slide_title">Engineering & Industrial Projects</p>
 
                             <div class="inds_backslide">
                                 <div class="inds_top">
@@ -434,7 +434,7 @@
                                 </div>
                                 <img src="{{ asset('public/admin/industries_image/Museums-and-Heritage.svg')}}" alt="Museums-and-Heritage" class="img-fluid" loading="lazy">
                             </div>
-                            <h3 class="slide_title">Education, Museums & Exhibitions</h3>
+                            <p class="slide_title">Education, Museums & Exhibitions</p>
 
                             <div class="inds_backslide">
                                 <div class="inds_top">
@@ -468,7 +468,7 @@
                                 </div>
                                 <img src="{{ asset('public/admin/industries_image/Virtual-Merchandising.svg')}}" alt="Virtual Merchandising" class="img-fluid" loading="lazy">
                             </div>
-                            <h3 class="slide_title">Client Presentations & Approvals</h3>
+                            <p class="slide_title">Client Presentations & Approvals</p>
 
                             <div class="inds_backslide">
                                 <div class="inds_top">
@@ -520,28 +520,28 @@
                     <div>
                         <div class="expect_slide">
                             <p class="process-count">1</p>
-                            <h3 class="title_24">Consultation & Concept</h3>
+                            <p class="title_24">Consultation & Concept</p>
                             <p>We review your drawings, 3D files, scale requirements, and presentation goals.</p>
                         </div>
                     </div>
                     <div>
                         <div class="expect_slide">
                              <p class="process-count">2</p>
-                            <h3 class="title_24">Digital Blueprinting</h3>
+                            <p class="title_24">Digital Blueprinting</p>
                             <p>Our team prepares a <strong>3D architectural model</strong> for client review before production begins.</p>
                         </div>
                     </div>
                      <div>
                         <div class="expect_slide">
                              <p class="process-count">3</p>
-                            <h3 class="title_24">Model Fabrication</h3>
+                            <p class="title_24">Model Fabrication</p>
                             <p>We use <strong>3D printing, CNC cutting, and hand-crafting</strong> to build the model with accurate details.</p>
                         </div>
                     </div>
                      <div>
                         <div class="expect_slide">
                              <p class="process-count">4</p>
-                            <h3 class="title_24">Finishing & Delivery</h3>
+                            <p class="title_24">Finishing & Delivery</p>
                             <p>Each model is professionally painted, inspected, packed, and delivered across Dubai and the UAE.</p>
                         </div>
                     </div>
@@ -563,7 +563,7 @@
                 @foreach ($exceeds_expectations as $exceeds_expectation)
                     <div>
                         <div class="expect_slide">
-                            <h3 class="title_24">{{ $exceeds_expectation->name }}</h3>
+                            <p class="title_24">{{ $exceeds_expectation->name }}</p>
                             {!! $exceeds_expectation->description !!}
                         </div>
                     </div>
