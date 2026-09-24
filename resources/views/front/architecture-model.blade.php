@@ -39,7 +39,7 @@
     <div class="container">
         <h1 class="title_48"><span style="color:#005762;">{{ $service->title }}</span></h1>
         {!! $service->description !!}
-        <a  href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn_0 mt-50" data-product="{{ $service->title }}">Enquire Now <svg class
+        <a  href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn_0 mt-50" data-product="{{ $service->title }}">Request a Quote <svg class
         ="ms-2"width="12" height="11" viewBox="0 0 12 11"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 10.5L11 0.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -587,11 +587,11 @@
 
             </div>
 
-            <div class="contact_btn">
+           
 
-                <div class="ct_arrow w-auto">
+                <div class="ct_arrow w-auto mt-3 mt-lg-0">
 
-                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  class="btn_0">Enquire Now <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
+                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-product="{{ $service->title }}" class="btn_0">Get a Quote <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
 
                             xmlns="http://www.w3.org/2000/svg">
 
@@ -606,7 +606,7 @@
                         </svg>
                     </a>
                 </div>
-            </div>
+            
         </div>
     </div>
 </section>

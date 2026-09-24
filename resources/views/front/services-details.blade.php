@@ -55,7 +55,7 @@
 
         {!! $service->description !!}
 
-        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn_0 mt-50" data-product="{{ $service->title }}">Enquire Now <svg width="12" height="11" viewBox="0 0 12 11"
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn_0 mt-50" data-product="{{ $service->title }}">Request a Quote <svg width="12" height="11" viewBox="0 0 12 11"
 
                 fill="none" xmlns="http://www.w3.org/2000/svg">
 

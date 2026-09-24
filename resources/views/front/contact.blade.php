@@ -38,7 +38,7 @@
 </section>
 <section class="mt-100" id="Inquiry_jump">
   <div class="container">
-    <form id="ContactForm" method="POST" class="conatct_inquiry" action="{{ route('front.contact_submit') }}">
+    <form id="ContactForm" class="conatct_inquiry" method="POST" class="conatct_inquiry" action="{{ route('front.contact_submit') }}">
       @csrf
       <input type="hidden" name="form_time" value="{{ time() }}">
       <div class="row ct_form_wraper">
@@ -138,7 +138,7 @@
         <!------------------------------->
         <div class="col-lg-12 ">
           <div class="form-floating">
-            <select class="form-select" id="services" name="services">
+            <select class="form-select" id="services" name="services" required>
               <option value="" hidden>Select Service</option>
               <option value="3D Printing Services">3D Printing Services</option>
               <option value="Large-Scale Model Making">Large-Scale Model Making</option>
@@ -167,7 +167,7 @@
         </div>
         <div class="col-lg-12">
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input" name="privacy_agree" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault" style="font-size:14px;"> I agree to the Privacy
               Policy and Terms and Condition </label>
           </div>
@@ -185,7 +185,7 @@
                   </svg> 
               </div>
               <div class="col-auto mt-3 mt-md-0">
-                  <input class="form-control" type="text" id="custom_captcha_comman_form" placeholder="Enter captcha" autocomplete="off">
+                  <input class="form-control" type="text" id="custom_captcha_comman_form" name="custom_captcha" placeholder="Enter captcha" autocomplete="off">
               </div>
               <small id="custom_captcha_error_comman_form" class="text-danger" style="display:none;">Please verify captcha.</small>
           </div>
@@ -277,191 +277,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Always default to UAE — no geolocation, no override
     phoneCodeSelect.val('971').trigger('change.select2');
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('ContactForm');
-    const submitButton = document.getElementById('contactSubmit');
-
-    // Fields
-    const fullname = document.getElementById('fullname');
-    const companyName = document.getElementById('company_name');
-    const email = document.getElementById('email');
-    const contact = document.getElementById('contact');
-    const checkbox = document.getElementById('flexCheckDefault');
-    const captchaInput = document.getElementById('custom_captcha_comman_form');
-    const honeypot = document.querySelector('input[name="fax_number"]');
-    // const honeypot = document.querySelector('input[name="fax_number"]');
-    // const country = document.getElementById('country');
-    // Captcha controls
-    const captchaError = document.getElementById('custom_captcha_error_comman_form');
-    const captchaImage = document.getElementById('captcha-image-comman-form');
-    const reloadButton = document.getElementById('reload-button-comman-form');
-
-    reloadButton.addEventListener('click', function () {
-        captchaImage.src = '{{ route("captcha.image") }}?' + Date.now();
-    });
-
-    // Create error elements dynamically
-    function createErrorElement(input) {
-        let error = document.createElement('small');
-        error.className = "text-danger mt-1";
-        error.style.display = "none";
-        input.parentNode.appendChild(error);
-        return error;
-    }
-
-    const fullnameError = createErrorElement(fullname);
-    const companyNameError = createErrorElement(companyName);
-    const emailError = createErrorElement(email);
-    const contactError = createErrorElement(contact);
-    const checkboxError = createErrorElement(checkbox);
-    // const countryError = createErrorElement(country); 
-    // Validation helpers
-    const isValidName = (name) => /^[A-Za-z\s]+$/.test(name.trim());
-    const isValidEmail = (email) => /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/.test(email);
-    const isValidContact = (number) => /^\d{0,15}$/.test(number.trim());
-    const isRequired = (v) => v.trim() !== '';
-    // const isValidCountry = (value) => value.trim() !== '';
-
-    // Anti-spam email pattern check
-    function checkSpamEmail(email) {
-        const spamPatterns = [
-            /^[a-zA-Z]{8,}[0-9]{6,}@/,
-            /^[0-9]+@/,
-            /(temp-mail|10minutemail|mailinator|guerrillamail|yopmail|throwawaymail|form-check.online|seismologiomail|ru|mailport.lat)/i,
-            /^(test|demo|example|noreply|fake|admin|info|random|dummy)/i,
-            /^(.)(\1){5,}@/
-        ];
-        for (let pattern of spamPatterns) {
-            if (pattern.test(email)) return false;
-        }
-        return true;
-    }
-
-    // Captcha validation
-    function validateCaptcha() {
-        if (captchaInput.value.trim() === '') {
-            captchaError.style.display = 'block';
-            captchaError.textContent = "Please enter the captcha.";
-            return false;
-        } else if (captchaInput.value.trim().length !== 4) {
-            captchaError.style.display = 'block';
-            captchaError.textContent = "Captcha must be 4 digits.";
-            return false;
-        } else {
-            captchaError.style.display = 'none';
-            return true;
-        }
-    }
-
-    let validationStarted = false;
-
-    function validateField(input, errorEl, validator, emptyMsg, invalidMsg) {
-        const value = input.value.trim();
-        if (value === '') {
-            errorEl.textContent = emptyMsg;
-            errorEl.style.display = 'block';
-            return false;
-        } else if (!validator(value)) {
-            errorEl.textContent = invalidMsg;
-            errorEl.style.display = 'block';
-            return false;
-        } else {
-            errorEl.style.display = 'none';
-            return true;
-        }
-    }
-
-    function attachLiveValidation() {
-        fullname.addEventListener('input', () => validationStarted && validateField(fullname, fullnameError, isValidName, "Full name is required", "Enter a valid full name"));
-        companyName.addEventListener('input', () => validationStarted && validateField(companyName, companyNameError, isRequired, "Company name is required", "Enter a valid company name"));
-        email.addEventListener('input', () => validationStarted && validateField(email, emailError, isValidEmail, "Email is required", "Enter a valid email"));
-        contact.addEventListener('input', () => validationStarted && validateField(contact, contactError, isValidContact, "Contact number is required", "Enter a valid contact number"));
-        captchaInput.addEventListener('input', () => validationStarted && validateCaptcha());
-        checkbox.addEventListener('change', () => validationStarted && (checkboxError.style.display = checkbox.checked ? 'none' : 'block'));
-        // country.addEventListener('change', () => validationStarted && validateField(country, countryError, isValidCountry, "Please select a country", "Please select a valid country")); // ✅
-
-      }
-
-    attachLiveValidation();
-
-    submitButton.addEventListener('click', function (e) {
-        e.preventDefault();
-        validationStarted = true;
-        let isValid = true;
-
-        // Basic validation
-        if (!validateField(fullname, fullnameError, isValidName, "Full name is required", "Enter a valid full name")) isValid = false;
-        if (!validateField(companyName, companyNameError, isRequired, "Company name is required", "Enter a valid company name")) isValid = false;
-
-        // Email validation + spam check
-        const emailVal = email.value.trim();
-        if (!validateField(email, emailError, isValidEmail, "Email is required", "Enter a valid email")) {
-            isValid = false;
-        } else if (!checkSpamEmail(emailVal)) {
-            emailError.textContent = "This email is not allowed.";
-            emailError.style.display = 'block';
-            isValid = false;
-        } else {
-            emailError.style.display = 'none';
-        }
-
-        if (!validateField(contact, contactError, isValidContact, "Contact number is required", "Enter a valid contact number")) isValid = false;
-
-        if (!checkbox.checked) {
-            checkboxError.textContent = "You must agree to the Privacy Policy and Terms.";
-            checkboxError.style.display = 'block';
-            isValid = false;
-        } else checkboxError.style.display = 'none';
-
-        if (!validateCaptcha()) isValid = false;
-
-        // Honeypot check (extra client-side safety)
-        if (honeypot.value.trim() !== '') {
-            console.warn('Honeypot triggered — possible spam bot.');
-            return; // silently stop
-        }
-
-        // // Inside submit click handler
-        // if (!validateField(country, countryError, isValidCountry, "Please select a country", "Please select a valid country")) {
-        //     isValid = false;
-        // }
-        if (!isValid) return;
-
-        // Lock button
-        submitButton.textContent = 'Verifying captcha...';
-        submitButton.disabled = true;
-
-        // Verify captcha via AJAX
-        $.ajax({
-            url: '{{ route("captcha.verify") }}',
-            type: 'POST',
-            data: {
-                _token: '{{ csrf_token() }}',
-                custom_captcha: captchaInput.value.trim()
-            },
-            success: function (response) {
-                if (response.success) {
-                    submitButton.textContent = 'Submitting...';
-                   submitButton.disabled = true;
-                    form.submit();
-                } else {
-                    captchaImage.src = '{{ route("captcha.image") }}?' + Date.now();
-                    captchaError.style.display = 'block';
-                    captchaError.textContent = response.message;
-                    submitButton.textContent = 'Submit Now';
-                    
-                    submitButton.disabled = false;
-                }
-            },
-            error: function () {
-                console.log('Something went wrong. Please try again.');
-                submitButton.textContent = 'Submit Now';
-               submitButton.disabled = false;
-            }
-        });
-    });
 });
 </script>

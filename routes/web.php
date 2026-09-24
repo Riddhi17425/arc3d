@@ -33,9 +33,7 @@ Route::get('clear', function () {
 });
 
 //========================Start Sitemap Routes========================
-
 Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
-
 //========================End Sitemap Routes========================
 
 route::get('/', [HomeController::class, 'index'])->name('front.home');

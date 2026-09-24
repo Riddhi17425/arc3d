@@ -176,7 +176,7 @@
         
             <div class="mb-3">
                 <label class="form-label">Mobile Number</label>
-                <input type="tel" class="form-control" name="mobile_number" id="mobile_number">
+                <input type="text" id="phone" name="phone" value="" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 15);" class="form-control" aria-describedby="phone-error" aria-invalid="true">
             </div>
         
             <div class="mb-3">

@@ -258,6 +258,10 @@ class HomeController extends Controller
                 'string',
                 'max:255',
             ],
+            'services'       => [
+            'required',
+            'string',
+           ],
             'message'        => [
                 'nullable',
                 'string',

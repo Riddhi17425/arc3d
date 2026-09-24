@@ -34,7 +34,7 @@
     <div class="container">
         <h1 class="title_48 blue_txt ">Best 3D Printing Company in UAE</h1>
         <p>{!! $service->description !!}</p>
-        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn_0 mt-50" data-product="{{ $service->title }}">Enquire Now <svg class="ms-2" width="12" height="11" viewBox="0 0 12 11"
+        <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn_0 mt-50" data-product="{{ $service->title }}">Request a Quote <svg class="ms-2" width="12" height="11" viewBox="0 0 12 11"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 10.5L11 0.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M2.11108 0.5H11V8.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -51,7 +51,7 @@
 <section class="tech mt-50">
     <div class="container">
         <div class="tech_head">
-            <h2 class="title_48 blue_txt text-start">3D Printing Technologies </h2>
+            <h2 class="title_48 blue_txt text-start">Advanced 3D Printing Technologies We Used </h2>
             <p class="text-start">At ARC 3D, we are able to utilize a variety of successful 3D printing technologies that can be adapted for different projects that we undertake. Each of these has a specific function that helps us to achieve the exact end result that we need.</p>
             <p class="text-start"><strong>We work with:</strong></p>
         </div>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="tech_des">
                                 <div class="tech_left">
-                                    <h4 class="head_2">SLA – Stereolithography</h4>
+                                    <h3 class="head_2">SLA – Stereolithography</h3>
                                     <p>SLA is one of the most precise and well-established 3D printing technologies. It uses a UV laser to solidify liquid resin layer by layer, producing highly detailed parts with smooth, clean surfaces and excellent accuracy.</p>
                                 </div>
                                 <div class="tech_right">
@@ -80,7 +80,7 @@
                             </div>
                             <div class="tech_des">
                                 <div class="tech_left">
-                                    <h4 class="head_2">FDM – Fused Deposition Modeling</h4>
+                                    <h3 class="head_2">FDM – Fused Deposition Modeling</h3>
                                     <p>FDM is one of the most commonly used 3D printing methods. It builds parts by melting and depositing thermoplastic filament layer by layer, creating strong, durable components that are ideal for both prototypes and functional applications.</p>
                                 </div>
                                 <div class="tech_right">
@@ -96,7 +96,7 @@
                             </div>
                             <div class="tech_des">
                                 <div class="tech_left">
-                                    <h4 class="head_2">SLS – Selective Laser Sintering</h4>
+                                    <h3 class="head_2">SLS – Selective Laser Sintering</h3>
                                     <p>SLS uses a powerful laser to fuse powdered material, typically nylon, into solid parts. Since it doesn’t require support structures, it allows highly complex shapes and even moving components to be printed in one piece.</p>
                                 </div>
                                 <div class="tech_right">
@@ -246,154 +246,11 @@
 </section>
 
 
-<section class="mt-100">
-    <div class="container">
-        <h4 class="title_48 blue_txt ">FAQs: 3D Printing Services  </h4>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="accordionExample">
-                            <div class="mb-4">
-                                <h2 class="according_head" 
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse0"
-                                    aria-expanded="true"
-                                    aria-controls="collapse0">
-                                    What is additive manufacturing and how does 3D printing work?
-                                </h2>
-                                <div id="collapse0" 
-                                    class="accordion-collapse collapse show"
-                                    data-bs-parent="#accordionExample">
-                                    <div>
-                                       Additive manufacturing, also known as 3D printing, is a process where an object is created layer by layer from a digital design. Instead of cutting or shaping material, the printer builds the model gradually, allowing complex forms, fine details, and accurate dimensions. At ARC 3D, this method helps us turn digital concepts into precise physical models efficiently.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h2 class="according_head" 
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse1"
-                                    aria-expanded="false"
-                                    aria-controls="collapse1">
-                                   Which industries in the UAE use 3D printing services?
-                                </h2>
-                                <div id="collapse1" 
-                                    class="accordion-collapse collapse "
-                                    data-bs-parent="#accordionExample">
-                                    <div>
-                                        3D printing is widely used across architecture, real estate, product design, engineering, education, retail, and manufacturing. ARC 3D supports all these industries by producing architectural scale models, display models, prototypes, and functional components that help visualize, test, and present ideas more clearly.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h2 class="according_head" 
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse2"
-                                    aria-expanded="false"
-                                    aria-controls="collapse2">
-                                  What affects the cost of 3D printing services in the UAE?
-                                </h2>
-                                <div id="collapse2" 
-                                    class="accordion-collapse collapse "
-                                    data-bs-parent="#accordionExample">
-                                    <div>
-                                        The cost depends on factors such as the size of the model, level of detail, type of material used, finishing requirements, and the number of pieces needed. At ARC 3D, we always aim to provide the most practical and cost-effective solution based on your project goals.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h2 class="according_head" 
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse3"
-                                    aria-expanded="false"
-                                    aria-controls="collapse3">
-                                    Can functional parts be 3D printed?
-                                </h2>
-                                <div id="collapse3" 
-                                    class="accordion-collapse collapse "
-                                    data-bs-parent="#accordionExample">
-                                    <div>
-                                         Yes. Many functional parts can be 3D printed depending on the purpose and material. Arc3D produces parts for testing, fitting, demonstrations, and light-use applications, helping clients evaluate designs before moving to full production.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h2 class="according_head" 
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse4"
-                                    aria-expanded="false"
-                                    aria-controls="collapse4">
-                                    Do you offer rapid prototyping?
-                                </h2>
-                                <div id="collapse4" 
-                                    class="accordion-collapse collapse "
-                                    data-bs-parent="#accordionExample">
-                                    <div>
-                                        Yes. Rapid prototyping is one of ARC 3D’s key services. It allows designers, architects, and businesses to quickly turn ideas into physical models for review, testing, and client presentations, saving time and reducing design risks.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h2 class="according_head" 
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse5"
-                                    aria-expanded="false"
-                                    aria-controls="collapse5">
-                                   How long does a 3D printing project take?
-                                </h2>
-                                <div id="collapse5" 
-                                    class="accordion-collapse collapse "
-                                    data-bs-parent="#accordionExample">
-                                    <div>
-                                       The time depends on the size, complexity, and finishing required. Simple models can be completed quickly, while larger or more detailed projects take longer. ARC 3D focuses on delivering each project efficiently without compromising accuracy or quality.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h2 class="according_head" 
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse6"
-                                    aria-expanded="false"
-                                    aria-controls="collapse6">
-                                    Why choose Arc 3D for 3D printing in Dubai?
-                                </h2>
-                                <div id="collapse6" 
-                                    class="accordion-collapse collapse "
-                                    data-bs-parent="#accordionExample">
-                                    <div>
-                                         ARC 3D combines skilled design understanding, professional printing systems, and consistent quality control. We don’t just print, we make sure every model serves its purpose, whether it’s for presentation, testing, or real-world use.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <h2 class="according_head" 
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#collapse7"
-                                    aria-expanded="false"
-                                    aria-controls="collapse7">
-                                    What makes ARC 3D a reliable choice for 3D printing in Dubai, UAE?
-                                </h2>
-                                <div id="collapse7" 
-                                    class="accordion-collapse collapse "
-                                    data-bs-parent="#accordionExample">
-                                    <div>
-                                       ARC 3D combines advanced 3D printing technology with skilled design and production teams to deliver accurate, high-quality results. With a streamlined in-house process and strong focus on detail, we ensure every project is completed on time and to professional standards.
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
-                </div>
-            </div>
-    </div>
-</section>
-
-
 @foreach ($printings as $printing)
     <section class="mt-100" id="printing_{{ $printing->url }}">
         <div class="container-fluid service_wrapper">
             <div class="container">
-                <h1 class="title_48 blue_txt">{{ $printing->title }}</h1>
+                <h2 class="title_48 blue_txt">{{ $printing->title }}</h2>
                 {!! $printing->description !!}
 
                 <div class="row mt-50 align-items-center">
@@ -465,7 +322,7 @@
                                                 </div>
                                                 <img src="{{ asset('public/admin/industries_image/' . $industry->image)}}" alt="" class="img-fluid br-10">
                                             </div>
-                                            <h2 class="slide_title">{{ $industry->title }}</h2>
+                                            <h3 class="slide_title">{{ $industry->title }}</h3>
                                             <div class="inds_backslide">
                                                 <div class="inds_top">
                                                     <div class="plus_icon">
@@ -516,6 +373,185 @@
         </div>
     </div>
 </section>
+
+<section class="contact mt-50">
+
+    <div class="container">
+
+        <div class="contact_head mt-5">
+
+            <div class="col-lg-10">
+
+                <h2 class="title_62">Have a 3D printing project in mind?<br>Let's transform your idea into a high-quality physical model.</h2>
+
+            </div>
+
+           
+
+                <div class="ct_arrow w-auto mt-3 mt-lg-0">
+
+                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop" data-product="{{ $service->title }}" class="btn_0">Get a Quote <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
+
+                            xmlns="http://www.w3.org/2000/svg">
+
+                            <path d="M1 10.5L11 0.5" stroke="white" stroke-linecap="round" stroke-linejoin="round">
+
+                            </path>
+
+                            <path d="M2.11108 0.5H11V8.5" stroke="white" stroke-linecap="round" stroke-linejoin="round">
+
+                            </path>
+
+                        </svg>
+                    </a>
+                </div>
+            
+        </div>
+    </div>
+</section>
+
+<section class="mt-100">
+    <div class="container">
+        <h2 class="title_48 blue_txt ">FAQs: 3D Printing Services  </h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="accordionExample">
+                            <div class="mb-4">
+                                <h3 class="according_head" 
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse0"
+                                    aria-expanded="true"
+                                    aria-controls="collapse0">
+                                    What is additive manufacturing and how does 3D printing work?
+                                </h3>
+                                <div id="collapse0" 
+                                    class="accordion-collapse collapse show"
+                                    data-bs-parent="#accordionExample">
+                                    <div>
+                                       Additive manufacturing, also known as 3D printing, is a process where an object is created layer by layer from a digital design. Instead of cutting or shaping material, the printer builds the model gradually, allowing complex forms, fine details, and accurate dimensions. At ARC 3D, this method helps us turn digital concepts into precise physical models efficiently.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="according_head" 
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1"
+                                    aria-expanded="false"
+                                    aria-controls="collapse1">
+                                   Which industries in the UAE use 3D printing services?
+                                </h3>
+                                <div id="collapse1" 
+                                    class="accordion-collapse collapse "
+                                    data-bs-parent="#accordionExample">
+                                    <div>
+                                        3D printing is widely used across architecture, real estate, product design, engineering, education, retail, and manufacturing. ARC 3D supports all these industries by producing architectural scale models, display models, prototypes, and functional components that help visualize, test, and present ideas more clearly.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="according_head" 
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2"
+                                    aria-expanded="false"
+                                    aria-controls="collapse2">
+                                  What affects the cost of 3D printing services in the UAE?
+                                </h3>
+                                <div id="collapse2" 
+                                    class="accordion-collapse collapse "
+                                    data-bs-parent="#accordionExample">
+                                    <div>
+                                        The cost depends on factors such as the size of the model, level of detail, type of material used, finishing requirements, and the number of pieces needed. At ARC 3D, we always aim to provide the most practical and cost-effective solution based on your project goals.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="according_head" 
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3"
+                                    aria-expanded="false"
+                                    aria-controls="collapse3">
+                                    Can functional parts be 3D printed?
+                                </h3>
+                                <div id="collapse3" 
+                                    class="accordion-collapse collapse "
+                                    data-bs-parent="#accordionExample">
+                                    <div>
+                                         Yes. Many functional parts can be 3D printed depending on the purpose and material. Arc3D produces parts for testing, fitting, demonstrations, and light-use applications, helping clients evaluate designs before moving to full production.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="according_head" 
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4"
+                                    aria-expanded="false"
+                                    aria-controls="collapse4">
+                                    Do you offer rapid prototyping?
+                                </h3>
+                                <div id="collapse4" 
+                                    class="accordion-collapse collapse "
+                                    data-bs-parent="#accordionExample">
+                                    <div>
+                                        Yes. Rapid prototyping is one of ARC 3D’s key services. It allows designers, architects, and businesses to quickly turn ideas into physical models for review, testing, and client presentations, saving time and reducing design risks.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="according_head" 
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse5"
+                                    aria-expanded="false"
+                                    aria-controls="collapse5">
+                                   How long does a 3D printing project take?
+                                </h3>
+                                <div id="collapse5" 
+                                    class="accordion-collapse collapse "
+                                    data-bs-parent="#accordionExample">
+                                    <div>
+                                       The time depends on the size, complexity, and finishing required. Simple models can be completed quickly, while larger or more detailed projects take longer. ARC 3D focuses on delivering each project efficiently without compromising accuracy or quality.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="according_head" 
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse6"
+                                    aria-expanded="false"
+                                    aria-controls="collapse6">
+                                    Why choose Arc 3D for 3D printing in Dubai?
+                                </h3>
+                                <div id="collapse6" 
+                                    class="accordion-collapse collapse "
+                                    data-bs-parent="#accordionExample">
+                                    <div>
+                                         ARC 3D combines skilled design understanding, professional printing systems, and consistent quality control. We don’t just print, we make sure every model serves its purpose, whether it’s for presentation, testing, or real-world use.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <h3 class="according_head" 
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapse7"
+                                    aria-expanded="false"
+                                    aria-controls="collapse7">
+                                    What makes ARC 3D a reliable choice for 3D printing in Dubai, UAE?
+                                </h3>
+                                <div id="collapse7" 
+                                    class="accordion-collapse collapse "
+                                    data-bs-parent="#accordionExample">
+                                    <div>
+                                       ARC 3D combines advanced 3D printing technology with skilled design and production teams to deliver accurate, high-quality results. With a streamlined in-house process and strong focus on detail, we ensure every project is completed on time and to professional standards.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                </div>
+            </div>
+    </div>
+</section>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>

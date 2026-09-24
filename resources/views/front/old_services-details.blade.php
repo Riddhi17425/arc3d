@@ -15,7 +15,7 @@
     <div class="container">
         <h1 class="title_48"><span style="color:#005762;">{{ $service->title }}</span></h1>
         {!! $service->description !!}
-        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn_0 mt-50" data-product="{{ $service->title }}">Enquire Now <svg width="12" height="11" viewBox="0 0 12 11"
+        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn_0 mt-50" data-product="{{ $service->title }}">Request a Quote <svg width="12" height="11" viewBox="0 0 12 11"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1 10.5L11 0.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
                 <path d="M2.11108 0.5H11V8.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>

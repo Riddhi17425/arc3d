@@ -123,7 +123,8 @@
                 '3D Printing',
                 'Prototyping Services',
                 'Large-Scale Model Making',
-                'Architectural Model Making'
+                'Architectural Model Making',
+                'Architectural Scale Models'
             ];
         @endphp
         
