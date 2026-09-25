@@ -134,37 +134,37 @@
                
                     <div>
                         <div class="expect_slide">
-                            <h4 class="title_24">Rapid Prototyping:</h4>
+                            <h3 class="title_24">Rapid Prototyping:</h3>
                             <p>Bring product ideas to life quickly with accurate prototypes that allow testing, review, and refinement before final production.</p>
                         </div>
                     </div>
                     <div>
                         <div class="expect_slide">
-                            <h4 class="title_24">Low-Volume Parts Production:</h4>
+                            <h3 class="title_24">Low-Volume Parts Production:</h3>
                             <p>Produce small batches of parts without the need for molds, keeping costs manageable while maintaining flexibility in design.</p>
                         </div>
                     </div>
                      <div>
                         <div class="expect_slide">
-                            <h4 class="title_24">Scale Models:</h4>
+                            <h3 class="title_24">Scale Models:</h3>
                             <p> Create detailed architectural and conceptual models with clean finishes and clear proportions for presentations and approvals.</p>
                         </div>
                     </div>
                      <div>
                         <div class="expect_slide">
-                            <h4 class="title_24">Branding, Promotional Items & Props:</h4>
+                            <h3 class="title_24">Branding, Promotional Items & Props:</h3>
                             <p>Custom 3D printed elements designed for exhibitions, events, and brand displays that stand out visually.</p>
                         </div>
                     </div>
                     <div>
                         <div class="expect_slide">
-                            <h4 class="title_24">Trophies & Corporate Gifts:</h4>
+                            <h3 class="title_24">Trophies & Corporate Gifts:</h3>
                             <p>Unique, customized trophies and gifts produced with care, suitable for corporate recognition and special occasions.</p>
                         </div>
                     </div>
                     <div>
                         <div class="expect_slide">
-                            <h4 class="title_24">Arts & Sculptures:</h4>
+                            <h3 class="title_24">Arts & Sculptures:</h3>
                             <p>Support creative projects with custom forms and shapes that traditional fabrication methods often limit.</p>
                         </div>
                     </div>
@@ -192,9 +192,9 @@
    
         <div class="container">
             <div class="col-lg-12">
-                <h3 class="title_48 blue_txt">
+                <h2 class="title_48 blue_txt">
                     Why Choose Arc 3D? 
-                </h3>
+                </h2>
                 <p>At ARC 3D, we provide a comprehensive and trustworthy 3D printing service with various technologies and materials for the UAE market. It is not only our business to print, but to guide clients toward the most suitable solution for their project.</p>
                 <p>Our team is actively collaborating with clients from the onset to completion, and this is accomplished while keeping everything transparent, communicating openly, and having realistic project timelines. Quality control is also carried out at each stage to ensure a final output that is not compromised on, and this is why a high number of clients have continued to work with ARC 3D for their projects.</p>
                 
@@ -206,7 +206,7 @@
 
 <section class="mt-100">
     <div class="container">
-        <h3 class="title_48 blue_txt">Our 3D Printing Process, From Concept to Reality </h3>
+        <h2 class="title_48 blue_txt">Our 3D Printing Process, From Concept to Reality </h2>
         
         <div class="expect_wrapper">
             <div class="expect_slider">
@@ -214,28 +214,28 @@
                     <div>
                         <div class="expect_slide process-slides">
                             <p class="process-count">1</p>
-                            <h4 class="title_24">Share Your Project</h4>
+                            <h3 class="title_24">Share Your Project</h3>
                             <p> Tell us about your requirements, including size, material preference, quantity, and intended use.</p>
                         </div>
                     </div>
                     <div>
                         <div class="expect_slide process-slides">
                              <p class="process-count">2</p>
-                            <h4 class="title_24">Upload Your Design</h4>
+                            <h3 class="title_24">Upload Your Design</h3>
                             <p> Share your 3D file or project brief. If needed, our team can assist with design preparation.</p>
                         </div>
                     </div>
                      <div>
                         <div class="expect_slide process-slides">
                              <p class="process-count">3</p>
-                            <h4 class="title_24">Receive Your Quote</h4>
+                            <h3 class="title_24">Receive Your Quote</h3>
                             <p> We review your project and provide a clear quotation with pricing and timelines.</p>
                         </div>
                     </div>
                      <div>
                         <div class="expect_slide process-slides">
                              <p class="process-count">4</p>
-                            <h4 class="title_24">Printing & Delivery</h4>
+                            <h3 class="title_24">Printing & Delivery</h3>
                             <p> Once approved, production begins, followed by inspection and delivery of the final output.</p>
                         </div>
                     </div>
@@ -353,7 +353,7 @@
     <div class="container">
         <div class="serv_cta row br-10">
             <div class="col-lg-3">
-                <div class="title_48 yellow_txt mb-0">Why Businesses Trust ARC 3D</div>
+                <h2 class="title_48 yellow_txt mb-0">Why Businesses Trust ARC 3D</h2>
             </div>
             <div class="col-lg-9 serv_cta_ctnt">
                 <div class="">
