@@ -9,7 +9,7 @@
 <section>
   <div class="container">
     <h2 class="title_36 blue_txt">Privacy Policy for Arc3d</h2>
-    <p>At Arc3d, accessible from https://arc3d.ae/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Arc3d and how we use it. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us. This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Arc3d. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+    <p>At Arc3d, accessible from <a href="https://arc3d.ae/" target="_blank">https://arc3d.ae</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Arc3d and how we use it. If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us. This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Arc3d. This policy is not applicable to any information collected offline or via channels other than this website.</p>
     <h2 class="title_36 blue_txt">Consent</h2>
     <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
     <h2 class="title_36 blue_txt">Information we collect</h2>
@@ -30,7 +30,7 @@
     <h2 class="title_36 blue_txt">Cookies and Web Beacons</h2>
     <p>Like any other website, Arc3d uses “cookies”. These cookies are used to store information including visitors’ preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users’ experience by customizing our web page content based on visitors’ browser type and/or other information.</p>
     <h2 class="title_36 blue_txt">Google DoubleClick DART Cookie</h2>
-    <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy.</p>
+    <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to <a href="https://arc3d.ae/" target="_blank">https://arc3d.ae/<a/> and other sites on the internet. However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy.</p>
     <h3 class="title_36 blue_txt">Our Advertising Partners</h3>
     <p>Some of advertisers on our site may use cookies and web beacons. Our advertising partners are listed below. Each of our advertising partners has their own Privacy Policy for their policies on user data. For easier access</p>
     <h3 class="title_36 blue_txt">Advertising Partners Privacy Policies</h3>
