@@ -38,7 +38,7 @@
                 <div class="cc_box">
                     <img src="{{asset('public/front/images/ied.svg')}}" alt="Innovation Every Day" class="img-fluid">
                     <div>
-                        <h4 class="slide_title">Innovation Every Day:</h4>
+                        <h3 class="slide_title">Innovation Every Day:</h3>
                         <p>Work on groundbreaking projects that push design and technology forward.</p>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="cc_box">
                     <img src="{{asset('public/front/images/gwu.svg')}}" alt="Grow With Us" class="img-fluid">
                     <div>
-                        <h4 class="slide_title">Grow With Us:</h4>
+                        <h3 class="slide_title">Grow With Us:</h3>
                         <p>We invest in your skills, career path, and personal development.</p>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <img src="{{asset('public/front/images/collab_culture.svg')}}" alt="Collaborative Culture"
                         class="img-fluid">
                     <div>
-                        <h4 class="slide_title">Collaborative Culture:</h4>
+                        <h3 class="slide_title">Collaborative Culture:</h3>
                         <p>A supportive team where every idea matters.</p>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="cc_box">
                     <img src="{{asset('public/front/images/b&b.svg')}}" alt="Balance & Benefits" class="img-fluid">
                     <div>
-                        <h4 class="slide_title">Balance & Benefits:</h4>
+                        <h3 class="slide_title">Balance & Benefits:</h3>
                         <p>Flexible work culture, wellness perks, and opportunities to thrive.</p>
                     </div>
                 </div>
@@ -78,9 +78,9 @@
     <img src="{{asset('public/front/images/career_img.png')}}" alt="Career image at ARC 3D" class="img-fluid">
     <div class="container">
         <div class="life_inside">
-            <h3 class="title_48 ">
+            <h2 class="title_48 ">
                 <span class="blue_txt">Life Inside Our Studio</span>
-            </h3>
+            </h2>
             <p>From brainstorming sessions and design sprints to celebrations and coffee breaks, our workplace is a
                 blend of creativity, energy, and collaboration. We believe in working hard, supporting each other, and
                 having fun along the way.</p>
@@ -91,9 +91,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h3 class="title_48 mb-0" id="position">
+                <h2 class="title_48 mb-0" id="position">
                     <span class="blue_txt">Find Your Next Role</span>
-                </h3>
+                </h2>
                 <p>Explore opportunities that match your skills and passion. Whether you’re a designer, engineer,
                     project manager, or visionary, we have a place for you.</p>
             </div>
@@ -157,7 +157,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="careerModalLabel">Apply Now</h1>
+        <p class="modal-title fs-5" id="careerModalLabel">Apply Now</p>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

@@ -39,6 +39,40 @@
         line-height: 1.2;
     }
     
+/* ===== 3D Printing Page: Core Services slider (equal height cards) ===== */
+
+/* Slider track ko flex banao taaki saare slides ki height barabar ho */
+.core-services-slider .slick-track {
+    display: flex !important;
+}
+
+/* Slick ke slide wrapper ki height auto rakho */
+.core-services-slider .slick-slide {
+    height: auto;
+}
+
+/* Slide ke andar wala div poori height le */
+.core-services-slider .slick-slide > div {
+    height: 100%;
+}
+
+/* Card ki fixed height aur padding (process-slides jaisi) */
+.expect_slide.core-service-slide {
+    height: 300px;
+    padding: 39px 25px;
+}
+
+/* Card ka heading style */
+.core-service-slide .title_24 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Card ka paragraph text */
+.core-service-slide p {
+    font-size: 16px;
+}
 </style>
 <section class="service_banner banner">
     <div class="container">
@@ -140,40 +174,40 @@
         <h2 class="title_48 blue_txt">Our Core 3D Printing Services </h2>
         
         <div class="expect_wrapper">
-            <div class="expect_slider">
+            <div class="expect_slider core-services-slider">
                
                     <div>
-                        <div class="expect_slide">
+                        <div class="expect_slide core-service-slide">
                             <h3 class="title_24">Rapid Prototyping:</h3>
                             <p>Bring product ideas to life quickly with accurate prototypes that allow testing, review, and refinement before final production.</p>
                         </div>
                     </div>
                     <div>
-                        <div class="expect_slide">
+                        <div class="expect_slide core-service-slide">
                             <h3 class="title_24">Low-Volume Parts Production:</h3>
                             <p>Produce small batches of parts without the need for molds, keeping costs manageable while maintaining flexibility in design.</p>
                         </div>
                     </div>
                      <div>
-                        <div class="expect_slide">
+                        <div class="expect_slide core-service-slide">
                             <h3 class="title_24">Scale Models:</h3>
                             <p> Create detailed architectural and conceptual models with clean finishes and clear proportions for presentations and approvals.</p>
                         </div>
                     </div>
                      <div>
-                        <div class="expect_slide">
+                        <div class="expect_slide core-service-slide">
                             <h3 class="title_24">Branding, Promotional Items & Props:</h3>
                             <p>Custom 3D printed elements designed for exhibitions, events, and brand displays that stand out visually.</p>
                         </div>
                     </div>
                     <div>
-                        <div class="expect_slide">
+                        <div class="expect_slide core-service-slide">
                             <h3 class="title_24">Trophies & Corporate Gifts:</h3>
                             <p>Unique, customized trophies and gifts produced with care, suitable for corporate recognition and special occasions.</p>
                         </div>
                     </div>
                     <div>
-                        <div class="expect_slide">
+                        <div class="expect_slide core-service-slide">
                             <h3 class="title_24">Arts & Sculptures:</h3>
                             <p>Support creative projects with custom forms and shapes that traditional fabrication methods often limit.</p>
                         </div>

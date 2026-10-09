@@ -48,8 +48,8 @@
                         <img src="{{asset('public/admin/teams/' . $team->image)}}" alt="{{ $team->alt_tag }}" class="img-fluid">
                     </div>
                     <div>
-                        <h3 class="title_24">{{ $team->name }}</h3>
-                        <h6 class="desig">{{ $team->designation }}</h6>
+                        <p class="title_24">{{ $team->name }}</p>
+                        <p class="desig">{{ $team->designation }}</p>
                     </div>
                     <div>
                         <p class="mb-0">{!! $team->description !!}</p>

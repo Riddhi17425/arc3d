@@ -169,7 +169,9 @@
                                     >
                             
                                     <div class="featured-project-overlay br-5">
+                                        @if(trim(strip_tags($project->title ?? '')) !== '')
                                         <h3>{{ $project->title }}</h3>
+                                        @endif
                                         <p>{!! $project->description !!}</p>
                                     </div>
                                 </div>
@@ -209,7 +211,9 @@
                                     <div class="featured-project-item custom-hand-cursor-target">
                                         <img src="{{ asset('public/admin/featureproject_image/' . $project->image)}}" alt="{{ $project->alt_tag }}" class="br-5">
                                         <div class="featured-project-overlay br-5">
+                                            @if(trim(strip_tags($project->title ?? '')) !== '')
                                             <h3>{{ $project->title }}</h3>
+                                            @endif
                                             <p>{!! $project->description !!}</p>
                                         </div>
                                     </div>

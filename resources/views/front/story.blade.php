@@ -63,26 +63,26 @@
         <div class="row mt-5">
             <div class="col-lg-3 col-md-6 mb-lg-0 mb-3" data-aos="fade-down" data-aos-delay="0">
                 <div class="stats_box h-100">
-                    <h2 class="count title_48 mb-0" data-count="50000" data-suffix="+">0</h2>
+                    <p class="count title_48 mb-0" data-count="50000" data-suffix="+">0</p>
                     <p class="mb-0">successful 3D prints delivered across UAE industries.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-md-0 mb-3" data-aos="fade-down" data-aos-delay="200">
                 <div class="stats_box h-100">
-                    <h2 class="count title_48 mb-0" data-count="100" data-suffix="+">0</h2>
+                    <p class="count title_48 mb-0" data-count="100" data-suffix="+">0</p>
                     <p class="mb-0">satisfied business clients including architects, engineers, & government entities.
                     </p>
                 </div>
             </div>
              <div class="col-lg-3 col-md-6 mb-lg-0 mb-3" data-aos="fade-down" data-aos-delay="600">
                 <div class="stats_box h-100">
-                    <h2 class="title_48 mb-0">24–48 hour</h2>
+                    <p class="title_48 mb-0">24–48 hour</p>
                     <p class="mb-0">turnaround time for rapid prototyping and small-batch production.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-md-0 mb-3" data-aos="fade-down" data-aos-delay="400">
                 <div class="stats_box h-100">
-                    <h2 class="count title_48 mb-0" data-count="80" data-suffix="%">0</h2>
+                    <p class="count title_48 mb-0" data-count="80" data-suffix="%">0</p>
                     <p class="mb-0">faster project delivery compared to traditional model-making.
                     </p>
                 </div>

@@ -100,6 +100,78 @@
         transform: rotate(360deg);
     }
 }
+@media (min-width: 992px) {
+
+    /* ---- About ko Quick Links se pehle lana ---- */
+    footer .ft_wrapper {
+        column-gap: 30px;
+        justify-content: space-between;
+    }
+
+    /* wrappers hata do taaki columns seedhe ft_wrapper ke items ban jayein */
+    footer .ft_right,
+    footer .ft_right .ft_menu:nth-child(3) {
+        display: contents;
+    }
+
+    footer .ft_left                         { order: 1; }
+    footer .desk_about                      { order: 2; }  /* About */
+    footer .ft_right .ft_menu:nth-child(1)  { order: 3; }  /* Quick Links */
+    footer .ft_right .ft_menu:nth-child(2)  { order: 4; }  /* Services */
+    footer .ft_right .ft_menu:nth-child(3) > div:first-child { order: 5; }  /* Technologies */
+
+    /* About, Quick Links, Services ke text wrap na hon (pehle jaise) */
+    footer .desk_about,
+    footer .ft_right .ft_menu:nth-child(1),
+    footer .ft_right .ft_menu:nth-child(2) {
+        flex-shrink: 0;
+    }
+
+    footer .desk_about .ft_list a,
+    footer .ft_right .ft_menu:nth-child(1) .ft_list a,
+    footer .ft_right .ft_menu:nth-child(2) .ft_list a {
+        white-space: nowrap;
+    }
+
+    /* ---- Logo wahi size/position, uske neeche text + social, phir © line ---- */
+    footer .ft_left {
+        max-width: 280px !important;
+        width: 280px;
+        flex: 0 0 280px;
+    }
+
+    footer .ft_top {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    footer .ft_top > img {
+        align-self: flex-start;
+        flex: 0 0 auto;
+        width: 153px !important;      /* live logo size: 153 x 181 */
+        max-width: 153px !important;      /* live logo size: 153 x 181 */
+        height: 181px !important;
+    }
+
+    footer .ft_top_left {
+        gap: 25px;
+        max-width: 280px;
+    }
+
+    /* Technologies column container se bahar na nikle (right side me bhi space rahe) */
+    footer .ft_right .ft_menu:nth-child(3) > div:first-child {
+        flex: 0 1 auto;
+        min-width: 0;
+    }
+
+    /* Tagline: "we" pehli/dusri line ke end me na rahe, lines barabar aayein */
+    footer .ft_top_left p {
+        max-width: 264px;
+        text-wrap: balance;
+    }
+}
+
+
 
 </Style>
 
@@ -153,7 +225,7 @@
 
                     <div class="ft_top_left">
 
-                        <p>From architectural models to industrial-grade prototyping — we bring your visions to life
+                        <p>From architectural models to industrial-grade prototyping , we bring your visions to life
 
                             with precision, speed, and style.</p>
 

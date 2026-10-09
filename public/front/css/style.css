@@ -1989,7 +1989,7 @@ textarea {
 }
 
 .expect_slide {
-    height: 300px;
+    /* height: 300px; */
     border-radius: 10px;
     background: var(--eee-gray);
     padding: 60px 35px;
