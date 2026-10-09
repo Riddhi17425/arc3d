@@ -63,7 +63,7 @@ route::get('/large-scale', [HomeController::class, 'large_scale'])->name('front.
 route::get('/terms-and-conditions', [HomeController::class, 'terms'])->name('front.terms');
 route::get('/privacy-policy', [HomeController::class, 'privacy'])->name('front.privacy');
 route::get('/blogs', [HomeController::class, 'blog_listing'])->name('front.blog_listing');
-route::get('/blog-detail/{url}', [HomeController::class, 'blog_detail'])->name('front.blog_detail');
+route::get('/blog/{url}', [HomeController::class, 'blog_detail'])->name('front.blog_detail');
 // Route::get('/sitemap.xml', [HomeController::class, 'sitemap'])->name('front.sitemap');
 
 //=============================Admin Route Starts Here========================
