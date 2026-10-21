@@ -1,5 +1,26 @@
 <Style>
 
+.button-effect{
+    animation: enquiryPulse 1.5s infinite !important;
+}
+@keyframes enquiryPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 170, 0, 0.65);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(228, 52, 65, 0.3);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(228, 52, 65, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 170, 0, 0);
+    }
+}
+    
 .WhatsAppButton {
 
     position: relative;
@@ -570,7 +591,7 @@
 
 
 
-<a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#sidebar_inquiry" class="btn_0 Inquiry_jump">Enquire Now </a>
+<a style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#sidebar_inquiry" class="btn_0 Inquiry_jump button-effect">Enquire Now </a>
 
 
 <!--<div class="float-buttons">-->
