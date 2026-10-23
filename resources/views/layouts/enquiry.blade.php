@@ -1,3 +1,26 @@
+@php
+  // Service form ke liye countries (unique variable names, taaki page ke variables se na takraye)
+  $serviceCountries = \App\Models\Country::select('id', 'name', 'phonecode', 'shortname')->get();
+@endphp
+
+<style>
+  /* Sirf service enquiry modal ke andar ke phone code select2 ke liye */
+  #staticBackdrop .phone_code_wrap .select2.select2-container {
+    width: 130px !important;
+    flex: 0 0 auto;
+    border-bottom: 1px solid #ddd;
+  }
+  #staticBackdrop .phone_code_wrap .select2-container--default .select2-selection--single {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+  }
+  #staticBackdrop .phone_code_wrap #phone {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+</style>
+
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -38,9 +61,23 @@
             </div>
             <div class="col-md-12 mb-3">
               <label class="form-label mb-0">Contact Number <span style=" color: red; ">*</span></label>
-              <input type="text" id="phone" name="phone"  maxlength="15"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 15);"
-                class="form-control ps-0" placeholder="Enter your contact number" pattern="\d{0,15}" title="Contact number is required">
+              <div class="d-flex align-items-end phone_code_wrap">
+                <input type="hidden" name="country" id="service_selected_country_name">
+                <select id="service_phone_code" name="phone_code" class="form-select" style="width:130px;">
+                  <option value="" hidden>Select Code</option>
+                  @foreach($serviceCountries as $serviceCountry)
+                    <option value="{{ $serviceCountry->phonecode }}"
+                            data-flag="{{ strtolower($serviceCountry->shortname) }}"
+                            data-name="{{ $serviceCountry->name }}"
+                            data-phonecode="{{ $serviceCountry->phonecode }}">
+                      {{ $serviceCountry->name }} +{{ $serviceCountry->phonecode }}
+                    </option>
+                  @endforeach
+                </select>
+                <input type="text" id="phone" name="phone"  maxlength="15"
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 15);"
+                  class="form-control ps-0" placeholder="Enter your contact number" pattern="\d{0,15}" title="Contact number is required">
+              </div>
               <small id="phoneError" class="text-danger"></small>
             </div> 
             
@@ -296,4 +333,52 @@
     });
 });
 
+</script>
+
+<!-- Country code (phone code) dropdown setup -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    if (!window.jQuery) return;
+    const $ = window.jQuery;
+    const servicePhoneCode = $('#service_phone_code');
+
+    // Select2 load na ho to bhi normal select kaam karega
+    if ($.fn.select2) {
+        servicePhoneCode.select2({
+            dropdownParent: $('#staticBackdrop'), // modal ke andar dropdown sahi chale
+            templateResult: function (option) {
+                if (!option.id) return option.text;
+                const flag = $(option.element).data('flag');
+                const name = $(option.element).data('name');
+                const code = $(option.element).data('phonecode');
+                const flagUrl = flag ? "https://flagcdn.com/24x18/" + flag.toLowerCase() + ".png" : "";
+                return $('<span><img src="' + flagUrl + '" style="width:20px; margin-right:8px;">' + name + ' +' + code + '</span>');
+            },
+            templateSelection: function (option) {
+                if (!option.id) return option.text;
+                const flag = $(option.element).data('flag');
+                const code = $(option.element).data('phonecode');
+                const flagUrl = flag ? "https://flagcdn.com/24x18/" + flag.toLowerCase() + ".png" : "";
+                return $('<span><img src="' + flagUrl + '" style="width:20px; margin-right:8px;">+' + code + '</span>');
+            },
+            width: '130px',
+            dropdownAutoWidth: true,
+        });
+    }
+
+    // Selected option ka country name hidden field me daalo
+    function setServiceCountryName() {
+        const name = servicePhoneCode.find('option:selected').data('name') || '';
+        $('#service_selected_country_name').val(name);
+    }
+
+    servicePhoneCode.on('change', setServiceCountryName);
+
+    // Default UAE
+    servicePhoneCode.val('971');
+    if ($.fn.select2) {
+        servicePhoneCode.trigger('change.select2');
+    }
+    setServiceCountryName();
+});
 </script>
