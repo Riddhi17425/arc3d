@@ -1767,6 +1767,14 @@ textarea {
     padding: 69px 110px;
     border-radius: 10px;
 }
+.enquire_now_form{
+    border: none;
+    padding: 0;
+    border-radius:0;
+}
+.enquire_now_form .form-floating{
+    margin-bottom:8px;
+}
 
 .ct_box_wrapper {
     display: flex;
@@ -1989,7 +1997,7 @@ textarea {
 }
 
 .expect_slide {
-    /* height: 300px; */
+    /*height: 300px;*/
     border-radius: 10px;
     background: var(--eee-gray);
     padding: 60px 35px;
@@ -2161,8 +2169,8 @@ textarea {
 }
 
 .Inquiry_jump {
-    bottom: 200px;
-     right: -30px;
+    bottom: 40%;
+     right: -2.5%;
      transform: rotate(270deg);
       padding: 15px 20px !important;
      position: fixed;
@@ -2392,4 +2400,9 @@ textarea {
 }
 .dyn_call{
     line-height:0!important;
+}
+/*sidebar form css*/
+.sidebarform .modal-dialog{
+    max-width:65%;
+    top:10%;
 }

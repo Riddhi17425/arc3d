@@ -115,6 +115,7 @@
                                     <div class="row align-items-end">
                                         <!--<input type="text" class="dyn_code form-control text-center col" id="phone_code" name="phone_code"-->
                                         <!--       style="max-width:100px;" readonly placeholder="+Code">-->
+                                        <input type="hidden" name="country" id="selected_country_name">
                                         <select id="phone_code" name="phone_code" class="form-select" style="width:50%">
                                             <option value="" hidden>Select Code</option>
                                             @foreach($countries as $country)
@@ -275,7 +276,16 @@ document.addEventListener("DOMContentLoaded", function () {
         dropdownAutoWidth: true,
     });
 
+    // Selected option ka country name hidden field me daalo
+    function setCountryName() {
+        const name = phoneCodeSelect.find('option:selected').data('name') || '';
+        $('#selected_country_name').val(name);
+    }
+
+    phoneCodeSelect.on('change', setCountryName);
+
     // Always default to UAE — no geolocation, no override
     phoneCodeSelect.val('971').trigger('change.select2');
+    setCountryName();
 });
 </script>

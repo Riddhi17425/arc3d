@@ -155,7 +155,11 @@ class HomeController extends Controller
                 $font->valign('center');
             });
         }
-        return $img->toPng();
+
+        // Proper image response (Content-Type header ke saath)
+        return response($img->toPng()->toString(), 200)
+            ->header('Content-Type', 'image/png')
+            ->header('Cache-Control', 'no-store, no-cache, must-revalidate');
     }
 
     public function verifyCaptcha(Request $request)
@@ -258,10 +262,11 @@ class HomeController extends Controller
                 'string',
                 'max:255',
             ],
+            // Home page form me services field nahi hota, isliye nullable
             'services'       => [
-            'required',
-            'string',
-           ],
+                'nullable',
+                'string',
+            ],
             'message'        => [
                 'nullable',
                 'string',
@@ -299,11 +304,11 @@ class HomeController extends Controller
                     }
                 },
             ],
-            // Bot timing check (hidden field form_time)
+            // Bot timing check (hidden field form_time) - home form me ye field nahi hota, isliye nullable
             'form_time'      => [
-                'required',
+                'nullable',
                 function ($attribute, $value, $fail) {
-                    if ((time() - (int) $value) < 5) {
+                    if ($value && (time() - (int) $value) < 5) {
                         $fail('Form submitted too quickly.');
                     }
                 },
@@ -321,12 +326,18 @@ class HomeController extends Controller
             return redirect()->route('front.thank-you');
         }
 
+        // Country: form se aaye to wahi, warna phone code se nikalo
+        $country = $request->input('country');
+        if (empty($country) && $request->phone_code) {
+            $country = \App\Models\Country::where('phonecode', $request->phone_code)->value('name');
+        }
+
         $contact = Contact::create([
             'first_name'   => $request->input('fullname'),
             'company_name' => $request->input('company_name'),
             'services' => $request->input('services'),
             'email'        => $request->input('email'),
-            'country'      => $request->input('country'),
+            'country'      => $country,
             'phone_code'   => $request->input('phone_code'),
             'contact'      => $request->input('contact_number'),
             'message'      => $request->input('message'),
@@ -342,13 +353,15 @@ class HomeController extends Controller
         //     return back()->with('error', 'Failed to send the email. Please try again later.');
         // }
 
-        $contact_number_withcode = "'" . $request->phone_code . ' ' . $request->contact_number;
+         $contact_number_withcode = "'" . $request->phone_code . ' ' . $request->contact_number;
+
+        $formType = $request->filled('services') ? 'Contact Form' : 'Footer Form';
         $sheetData               = [
-            'form_type'    => 'Contact Form',
+            'form_type'    => $formType,
             'fullname'     => $request->fullname ?? '',
             'company_name' => $request->company_name ?? '',
             'services'     => $request->services ?? '',
-            'country'      => $request->country ?? '',
+            'country'      => $country ?? '',
             'contact'      => $contact_number_withcode ?? '',
             'email'        => $request->email ?? '',
             'service_name' => $request->input('services') ?? '',
@@ -359,7 +372,8 @@ class HomeController extends Controller
             ->withHeaders([
                 'Content-Type' => 'application/json',
             ])
-            ->post('https://script.google.com/macros/s/AKfycbzg5STqANh0nJkB5D-CGiHATkppIBPjgFyvXA-dkgA4nFZROQCsAQuZ90LIEv7VMVFa/exec', $sheetData);
+            // ->post('https://script.google.com/macros/s/AKfycbzg5STqANh0nJkB5D-CGiHATkppIBPjgFyvXA-dkgA4nFZROQCsAQuZ90LIEv7VMVFa/exec', $sheetData);
+            ->post('https://script.google.com/macros/s/AKfycbxsreIER5lBCqPKpRT--0oQUy8F-9qIBv3MDL4gURuUJo-hHdArJ_Gs8z8tGgcUA5bD9g/exec', $sheetData);
 
         // Check response
         if ($response->successful()) {
@@ -717,7 +731,8 @@ class HomeController extends Controller
             ->withHeaders([
                 'Content-Type' => 'application/json',
             ])
-            ->post('https://script.google.com/macros/s/AKfycbzg5STqANh0nJkB5D-CGiHATkppIBPjgFyvXA-dkgA4nFZROQCsAQuZ90LIEv7VMVFa/exec', $sheetData);
+            // ->post('https://script.google.com/macros/s/AKfycbzg5STqANh0nJkB5D-CGiHATkppIBPjgFyvXA-dkgA4nFZROQCsAQuZ90LIEv7VMVFa/exec', $sheetData);
+            ->post('https://script.google.com/macros/s/AKfycbxsreIER5lBCqPKpRT--0oQUy8F-9qIBv3MDL4gURuUJo-hHdArJ_Gs8z8tGgcUA5bD9g/exec', $sheetData);
 
         // Check response
         if ($response->successful()) {

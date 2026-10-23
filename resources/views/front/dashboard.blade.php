@@ -672,6 +672,7 @@
                                     <div class="row align-items-end">
                                         <!--<input type="text" class="dyn_code form-control text-center col" id="phone_code" name="phone_code"-->
                                         <!--       style="max-width:100px;" readonly placeholder="+Code">-->
+                                        <input type="hidden" name="country" id="selected_country_name">
                                         <select id="phone_code" name="phone_code" class="form-select" style="width:50%">
                                             <option value="" hidden>Select Code</option>
                                             @foreach($countries as $country)
@@ -936,37 +937,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // === Detect and auto-select country on page load ===
-    fetch("https://ipapi.co/json/")
-        .then(response => response.json())
-        .then(data => {
-            const detectedCode = data.country_code?.toUpperCase(); // e.g. "IN"
-            const detectedName = data.country_name;
+    // === Selected phone code ke option se country name hidden field me daalo ===
+    function setCountryName() {
+        const name = phoneCodeSelect.find('option:selected').data('name') || '';
+        $('#selected_country_name').val(name);
+    }
 
-            // Try to match country by shortname (if you added it)
-            let matchedCountry = countrySelect.find('option[data-shortname="' + detectedCode + '"]');
+    phoneCodeSelect.on('change', setCountryName);
 
-            // Fallback: match by name (if shortname column doesn’t exist)
-            if (!matchedCountry.length) {
-                matchedCountry = countrySelect.find('option').filter(function() {
-                    return $(this).text().trim().toLowerCase() === detectedName.toLowerCase();
-                });
-            }
-
-            if (matchedCountry.length) {
-                const phoneCode = matchedCountry.data('phonecode');
-                const countryId = matchedCountry.val();
-
-                // Set country and phone code
-                countrySelect.val(countryId).trigger('change.select2');
-                if (phoneCode) {
-                    phoneCodeSelect.val(phoneCode).trigger('change.select2');
-                }
-            } else {
-                console.warn('Could not match detected country:', detectedName);
-            }
-        })
-        .catch(err => console.warn("Could not detect location:", err));
+    // === Default UAE ===
+    phoneCodeSelect.val('971').trigger('change.select2');
+    setCountryName();
 });
 </script>
 
