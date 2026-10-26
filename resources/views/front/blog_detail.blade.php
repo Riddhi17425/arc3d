@@ -75,43 +75,6 @@ tbody td:last-child {
 </section>
 <section class="accoding blog-content">
     <div class="container">
-        @php
-            $faqItems = [];
-
-            if (!empty($blogsdetail->title_description)) {
-
-                $decodedFaqItems = $blogsdetail->title_description;
-
-                if (is_array($decodedFaqItems)) {
-                    foreach ($decodedFaqItems as $item) {
-                        $question = trim(strip_tags($item['faq_title'] ?? ''));
-                        $answer = trim(strip_tags($item['faq_description'] ?? ''));
-
-                        if ($question && $answer) {
-                            $faqItems[] = [
-                                'question' => $question,
-                                'answer' => $answer,
-                            ];
-                        }
-                    }
-                }
-            }
-
-            $faqSchema = [
-                '@context' => 'https://schema.org',
-                '@type' => 'FAQPage',
-                'mainEntity' => array_map(function ($item) {
-                    return [
-                        '@type' => 'Question',
-                        'name' => $item['question'],
-                        'acceptedAnswer' => [
-                            '@type' => 'Answer',
-                            'text' => $item['answer'],
-                        ],
-                    ];
-                }, $faqItems),
-            ];
-        @endphp
         @if (!empty($blogs->title_description) && count($blogs->title_description) > 0)
             <h2 class="text-center mb-5">Frequently Asked Questions</h2>
             <div class="row">
@@ -141,9 +104,77 @@ tbody td:last-child {
         @endif
     </div>
 </section>
-@if(!empty($faqItems))
-    <script type="application/ld+json">
-        {!! json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
-    </script>
+
+{{-- ================= DYNAMIC SCHEMA (BlogPosting + FAQPage) ================= --}}
+@php
+    // ---------- FAQ data ----------
+    $rawFaqs = $blogs->title_description;
+    if (is_string($rawFaqs)) {
+        $rawFaqs = json_decode($rawFaqs, true);
+    }
+
+    $faqItems = collect($rawFaqs ?? [])
+        ->map(fn ($item) => [
+            'question' => trim(html_entity_decode(strip_tags($item['faq_title'] ?? ''))),
+            'answer'   => trim(html_entity_decode(strip_tags($item['faq_description'] ?? ''))),
+        ])
+        ->filter(fn ($i) => $i['question'] !== '' && $i['answer'] !== '')
+        ->values();
+
+    // ---------- BlogPosting data ----------
+    $blogUrl = route('front.blog_detail', ['url' => $blogs->url]);
+
+    $blogImage = !empty($blogs->detail_image)
+        ? url('public/admin/blogs/detail_image/' . $blogs->detail_image)
+        : (!empty($blogs->front_image) ? url('public/admin/blogs/front_image/' . $blogs->front_image) : null);
+
+    $blogDescription = !empty($blogs->meta_description)
+        ? $blogs->meta_description
+        : \Illuminate\Support\Str::limit(trim(html_entity_decode(strip_tags($blogs->short_description))), 160);
+
+    $datePublished = \Carbon\Carbon::parse($blogs->date)->toIso8601String();
+    $dateModified  = !empty($blogs->updated_at)
+        ? \Carbon\Carbon::parse($blogs->updated_at)->toIso8601String()
+        : $datePublished;
+
+    $blogPostingSchema = array_filter([
+        '@context'         => 'https://schema.org',
+        '@type'            => 'BlogPosting',
+        'mainEntityOfPage' => ['@type' => 'WebPage', '@id' => $blogUrl],
+        'headline'         => \Illuminate\Support\Str::limit($blogs->title, 110, ''),
+        'description'      => $blogDescription,
+        'image'            => $blogImage,
+        'author'           => ['@type' => 'Organization', 'name' => 'ARC 3D', 'url' => url('/')],
+        'publisher'        => [
+            '@type' => 'Organization',
+            'name'  => 'ARC 3D',
+            // TODO: PNG ready hone par isse head_logo.png se replace karna (Google SVG support nahi karta)
+            'logo'  => ['@type' => 'ImageObject', 'url' => asset('public/front/images/head_logo.svg')],
+        ],
+        'datePublished'    => $datePublished,
+        'dateModified'     => $dateModified,
+    ]);
+
+    // ---------- FAQPage ----------
+    $faqSchema = [
+        '@context'   => 'https://schema.org',
+        '@type'      => 'FAQPage',
+        'mainEntity' => $faqItems->map(fn ($i) => [
+            '@type'          => 'Question',
+            'name'           => $i['question'],
+            'acceptedAnswer' => ['@type' => 'Answer', 'text' => $i['answer']],
+        ])->all(),
+    ];
+@endphp
+
+<script type="application/ld+json">
+{!! json_encode($blogPostingSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
+
+@if($faqItems->isNotEmpty())
+<script type="application/ld+json">
+{!! json_encode($faqSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+</script>
 @endif
+
 @include('layouts.frontfooter')

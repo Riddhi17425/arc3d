@@ -530,12 +530,12 @@ class HomeController extends Controller
         return view('front.blog_listing', compact('title', 'description', 'blogs'));
     }
     public function blog_detail($url)
-    {
-        $blogs       = Blogs::/*where('status' , 'Active')->*/where('url', $url)->first();
-        $title       = $blogs->meta_title ?? '';
-        $description = $blogs->meta_description ?? '';
-        return view('front.blog_detail', compact('title', 'description', 'blogs'));
-    }
+{
+    $blogs       = Blogs::where('url', $url)->firstOrFail();
+    $title       = $blogs->meta_title ?? '';
+    $description = $blogs->meta_description ?? '';
+    return view('front.blog_detail', compact('title', 'description', 'blogs'));
+}
 
     public function Services($url)
     {
@@ -839,7 +839,7 @@ class HomeController extends Controller
     $response = Http::withHeaders(['Content-Type' => 'application/json'])
         ->timeout(30)
         ->retry(3, 1000) // 3 attempts, 1 second gap
-        ->post('https://script.google.com/macros/s/AKfycbztAqlbzzo4_VTupFcT6udaQtinGuXjwL1zNm018BvHnkzEfLDF7JEa5DDjB2qKvWM-/exec', $sheetsData);
+        ->post('https://script.google.com/macros/s/AKfycbwD-b8rRji8t-Jo7pTDO_Fj0FUouqii9h-IcGPuPMLwiref0iXr_DqCKQBoX8Md-p-KNg/exec', $sheetsData);
 
     if ($response->successful()) {
         Log::info('WhatsApp inquiry sent to sheet', [

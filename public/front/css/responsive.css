@@ -76,7 +76,9 @@
         font-size:52px;
         line-height:62px;
     }
-    
+    .Inquiry_jump{
+        right:-3.5%;
+    }
    
     
 }
@@ -85,6 +87,7 @@
         transform: translateX(-12%);
     }
     .tyre_img{display:none;}
+    
 }
 @media only screen and (max-width: 1367px) {
     .title_62 {
@@ -116,7 +119,9 @@
     .proced_2 .svg_wrapper {transform: translateX(0%);}
     
     /*process*/
-    
+    .Inquiry_jump{
+        bottom:45%;
+    }
 }
 @media only screen and (max-width: 1281px) {
     .proced_1{top: 10%;}
@@ -433,6 +438,9 @@
         padding: 15px 21px;
         width: 51px;
         border-radius:999px;
+    }
+    .Inquiry_jump{
+       right:-9%;
     }
 }
 
