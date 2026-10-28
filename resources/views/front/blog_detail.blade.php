@@ -132,10 +132,12 @@ tbody td:last-child {
         ? $blogs->meta_description
         : \Illuminate\Support\Str::limit(trim(html_entity_decode(strip_tags($blogs->short_description))), 160);
 
-    $datePublished = \Carbon\Carbon::parse($blogs->date)->toIso8601String();
-    $dateModified  = !empty($blogs->updated_at)
-        ? \Carbon\Carbon::parse($blogs->updated_at)->toIso8601String()
-        : $datePublished;
+    $datePublished = \Carbon\Carbon::parse($blogs->date)
+    ->setTimeFrom(\Carbon\Carbon::parse($blogs->created_at ?? $blogs->date))
+    ->toIso8601String();
+$dateModified  = !empty($blogs->updated_at)
+    ? \Carbon\Carbon::parse($blogs->updated_at)->toIso8601String()
+    : $datePublished;
 
     $blogPostingSchema = array_filter([
         '@context'         => 'https://schema.org',
